@@ -1,2 +1,3 @@
 # react-context-app-stater
-Starter Kit for projects using React Context API(anti redux).
+
+Starter Kit for projects using create-react-app + TypeScript + Context API(anti redux).

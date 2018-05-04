@@ -5,6 +5,24 @@
   },
   "rules": {
     "interface-name": [true, "never-prefix"],
-    "member-access": [true, "no-public"]
+    "member-access": [true, "no-public"],
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "any",
+        "named-imports-order": "case-insensitive"
+      }
+    ],
+    "object-literal-sort-keys": false,
+    "no-console": [
+      false,
+      "log",
+      "error",
+      "debug",
+      "info",
+      "time",
+      "timeEnd",
+      "trace"
+    ]
   }
 }
