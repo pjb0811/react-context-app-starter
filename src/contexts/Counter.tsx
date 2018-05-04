@@ -17,31 +17,27 @@ class CounterProvider extends React.Component<any, State> {
   };
   actions = {
     increment: () => {
-      this.setState(prevState => {
-        this.actions.getPost(this.state.count + 1);
-        return {
-          ...prevState,
-          count: prevState.count + 1
-        };
+      this.actions.getPost(this.state.count + 1).then(post => {
+        this.setState(prevState => {
+          return {
+            count: prevState.count + 1,
+            post
+          };
+        });
       });
     },
     decrement: () => {
-      this.setState(prevState => {
-        this.actions.getPost(this.state.count - 1);
-        return {
-          ...prevState,
-          count: prevState.count - 1
-        };
+      this.actions.getPost(this.state.count - 1).then(post => {
+        this.setState(prevState => {
+          return {
+            count: prevState.count - 1,
+            post
+          };
+        });
       });
     },
     getPost: (postId: number) => {
-      axios
-        .get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
-        .then(post => {
-          this.setState({
-            post
-          });
-        });
+      return axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`);
     }
   };
 
