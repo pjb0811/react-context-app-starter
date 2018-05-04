@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Counter from './components/Counter';
+import Post from './components/Post';
 import { CounterProvider } from './contexts/Counter';
 
 const AppProvider = (props: { contexts: any; children: any }) =>
@@ -15,6 +16,7 @@ const App = () => {
   return (
     <AppProvider contexts={[CounterProvider]}>
       <Counter />
+      <Post />
     </AppProvider>
   );
 };

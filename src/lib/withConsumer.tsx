@@ -5,7 +5,7 @@ const WithConsumer = (Consumer: any) => (WrappedComponent: any) => {
     return (
       <Consumer>
         {(context: any) => {
-          return <WrappedComponent {...context} />;
+          return <WrappedComponent {...context} {...props} />;
         }}
       </Consumer>
     );
